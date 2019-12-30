@@ -1,0 +1,127 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    padding: 20px;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+form input[type="text"], form textarea {
+    display: block;
+    width: 30%;
+}
+
+html {
+    background-color: white;
+}
+
+body {
+    width: 1024px;
+    margin: 50px auto 0 auto;
+    min-width: 480px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1024px) {
+    body {
+        width: 720px;
+    }
+}
+
+@media (max-width: 720px) {
+    body {
+        width: 512px;
+    }
+}
+
+@media (max-width: 512px) {
+    body {
+        width: 480px;
+    }
+}
+
+.heading {
+    text-align: center;
+    padding: 10px;
+}
+
+.name {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+iframe {
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.description {
+    word-wrap: break-word;
+    padding: 10px 0 10px 10px;
+}
+
+.callMenu {
+    position: relative;
+    top: -60px;
+    left: -20px;
+    cursor: pointer;
+}
+
+hr {
+    margin: 0;
+}
+
+.menu li {
+    padding: 15px 0 0 10px;
+    cursor: pointer;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background-color: white;
+    border-right: 1px solid black;
+    display: none;
+    min-width: 200px;
+    overflow: auto;
+}
+
+.menu li:hover {
+    background-color: #98AFBE;
+}
+
+.deleteMenuButton {
+    background-color: #d7d7d7;
+    color: white;
+    float: right;
+}
+
+.deleteMenuButton:hover {
+    background-color: #a8a8a8;
+}
+
+
+

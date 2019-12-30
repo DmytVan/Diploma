@@ -1,0 +1,296 @@
+
+html * {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 730px;
+}
+
+header {
+    /*background-color: #002f5f;*/
+    background-image: linear-gradient(180deg, #001b3e, #0077ff);
+    height: 250px;
+    min-width: 730px;
+}
+
+@keyframes changeContentHide {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: -120%;
+    }
+}
+
+@keyframes changeContentSet {
+    from {
+        /*transform: rotate(720deg);*/
+        left: 120%;
+    }
+
+    to {
+        /*transform: rotate(0);*/
+        left: 1%;
+    }
+}
+
+.animationContentHide {
+    animation: changeContentHide 0.5s;
+}
+
+.animationContentSet {
+    animation: changeContentSet 1s;
+}
+
+@keyframes logo {
+    from {
+        transform: rotate(0) scale(.5);
+        left: 120%
+    }
+    50% {
+        transform: rotate(-720deg) scale(.5);
+        left: 50px;
+    }
+    to {
+        transform: rotate(0) scale(1);
+    }
+}
+
+.logo {
+    animation: logo 2s;
+    position: absolute;
+    z-index: 100;
+    left: 50px;
+    top: 50px;
+}
+
+.headerText {
+    font-size: 2.2em;
+    color: rgb(255, 255, 255);
+    opacity: 0;
+    transition: all 2s;
+    padding-top: 10px;
+}
+
+.container {
+    width: 100%;
+    /*padding: 10px 0 30px 0;*/
+    height: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.empty {
+    display: inline-block;
+    width: 250px;
+    height: 220px;
+    float: left;
+    left: 0;
+}
+
+@media (max-width: 1120px) {
+    .container h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 740px) {
+    .container h1 {
+        font-size: 25px;
+    }
+}
+
+nav {
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    text-align: left;
+}
+
+nav li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    background: #699fff;
+    border-radius: 5px;
+    text-shadow: none;
+}
+
+main {
+    transition: all 10s;
+    min-height: 500px;
+}
+
+main > div {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.nav {
+    flex: 1;
+    min-width: 210px;
+    margin-right: 10px;
+}
+
+.up {
+    height: 100%;
+    opacity: .3;
+    position: relative;
+    cursor: pointer;
+}
+
+.up:hover{
+    opacity: 1;
+}
+
+.upButton {
+    position: fixed;
+    bottom: 0;
+    left: 90px;
+    font-size: 50px;
+}
+
+.info {
+    min-width: 510px;
+    flex: 7;
+}
+
+.flex {
+    display: flex;
+}
+
+.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: url("../files/photo/avatar-min.png");
+    background-size: contain;
+    cursor: pointer;
+}
+
+.bigPhoto {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background-image: url("../files/photo/avatar.png");
+    background-size: contain;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    text-align: right;
+}
+
+.closeAvatar {
+    margin-right: 10px;
+    font-size: 20px;
+    opacity: .5;
+    cursor: pointer;
+    user-select: none;
+}
+
+.closeAvatar:hover {
+    opacity: 1;
+}
+
+.transparent {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 998;
+    opacity: .7;
+}
+
+.hide {
+    display: none;
+}
+
+p {
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+ol li {
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+h2 {
+    background-color: #cccccc;
+}
+
+.searchList {
+    margin: 10px 0 ;
+    padding: 0;
+}
+
+.searchList li {
+    margin: 10px;
+    border-bottom: 1px solid black;
+    list-style: none;
+    cursor: pointer;
+}
+
+.searchList  li:hover {
+    background-color: #cccccc;
+}
+
+.disciplineName {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.discipline ul {
+    list-style: none;
+}
+
+.disciplineName a{
+    font-size: 25px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.materials a{
+    text-decoration: none;
+    margin: 10px 40px 10px 40px;
+}
+
+.photo {
+     text-align: center;
+ }
+
+.photo img, .photo video {
+     width: 60%;
+    min-width: 600px;
+    margin-bottom: 20px;
+ }
+
+.photo video {
+    max-height: 700px;
+}
+
+.video {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-size: 30px;
+}

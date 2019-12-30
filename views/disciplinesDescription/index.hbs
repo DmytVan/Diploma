@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/disciplinesDescription/index.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="../files/icons/logo_1.png" type="image/png">
+</head>
+<body>
+<h1 class="disciplineName">{{discipline.name}}</h1>
+<hr>
+<div class="description">
+    <div class="descriptionContent">
+        {{{discipline.description}}}
+    </div>
+    {{#if isAdmin}}
+        <input type="button" value="Изменить описание" onclick="changeDescription(event)" style="margin-top: 20px">
+    {{/if}}
+    {{#each discipline.table}}
+        <div data-table-id="{{this.id}}" data-discipline-id ='{{../discipline._id}}'>
+            <div class="tableWrap">
+                {{{this.html}}}
+            </div>
+            {{#if ../isAdmin}}
+                <input type="button" value="Изменить таблицу" onclick="changeTable(event)">
+                <input type="button" value="Удалить таблицу" onclick="deleteTable(event)">
+            {{/if}}
+        </div>
+    {{/each}}
+</div>
+{{#if isAdmin}}
+    <input type="button" value="Добавить таблицу" onclick="addTable(event)" style="margin-top: 20px">
+{{/if}}
+{{#if isAdmin}}
+    <script src="../adminScripts/changeDisciplineDescription.js" type="text/javascript"></script>
+{{/if}}
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Відео</title>
+    <meta charset="utf-8"/>
+    <style>
+    </style>
+    <link href="/video/index.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="../files/icons/logo_1.png" type="image/png">
+</head>
+<body>
+{{#if isAdmin}}
+    <div style="text-align: right">
+        <a href="/admin">Головна</a>
+        <a href="/logout">Вийти</a>
+    </div>
+{{/if}}
+<h1 class="heading">Видео</h1>
+<hr/>
+<img src="../files/icons/menu.png" alt="menu" class="callMenu" onclick="callMenu()">
+<div class="menu">
+    <ul>
+        <hr/>
+        {{#if isAdmin}}
+            <a href="/adminVideo">
+                <li data-sectionid="1">
+                    Всі
+                    <hr/>
+                </li>
+            </a>
+        {{else}}
+            <a href="/video">
+                <li data-sectionid="1">
+                    Все
+                    <hr/>
+                </li>
+            </a>
+        {{/if}}
+        {{#if isAdmin}}
+            {{#each allMenuSections}}
+                <div data-sectionid="{{this._id}}">
+
+                    <input name="deleteSection" class="deleteMenuButton" type="button" value="X"
+                           onclick="deleteMenuSection(event)">
+
+                    <a href="/adminVideo?q={{this._id}}">
+                        <li>
+                            {{this.name}}
+                            <hr/>
+                        </li>
+                    </a>
+                </div>
+            {{/each}}
+        {{else}}
+            {{#each allMenuSections}}
+                <a href="/video?q={{this._id}}">
+                    <li data-sectionid="{{this._id}}">
+                        {{this.name}}
+                        <hr/>
+                    </li>
+                </a>
+            {{/each}}
+        {{/if}}
+    </ul>
+    {{#if isAdmin}}
+        <input name="addSection" class="addButton" type="button" value="Добавить" onclick="addNewSection(event)">
+    {{/if}}
+</div>
+<ul class="videoList">
+    {{#each allVideos}}
+        <li>
+            <div>
+                <h2 class="name">{{this.name}}</h2>
+                <iframe width="100%" height="720" src="{{this.src}}" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen data-videoid="{{this._id}}"></iframe>
+                <p class="description">{{this.description}}</p>
+                {{#if ../isAdmin}}
+                    <input name="editButton" class="changeButton" type="button" value="Изменить"
+                           onclick="changeVideoNode(event)">
+                    <input name="deleteButton" class="deleteButton" type="button" value="Удалить"
+                           onclick="deleteVideoNode(event)">
+                {{/if}}
+            </div>
+        </li>
+    {{else}}
+        <h2>Видеоматериалов нет</h2>
+    {{/each}}
+</ul>
+
+
+<script src="/video/index.js" type="text/javascript"></script>
+{{#if isAdmin}}
+    <input name="addButton" class="addButton" type="button" value="Добавить видео"
+           onclick="addNewVideo(event)">
+    <script src="../adminScripts/changeVideoDocument.js" type="text/javascript"></script>
+{{/if}}
+</body>
+<html>
+

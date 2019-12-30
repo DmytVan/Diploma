@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/lecturesOfDiscipline/index.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="../files/icons/logo_1.png" type="image/png">
+</head>
+<body>
+<h1 class="disciplineName">{{discipline.name}}</h1>
+<hr>
+<ul>
+    {{#each materials}}
+        <li data-filename="{{this.filename}}" data-id="{{../discipline._id}}" data-type="{{../type}}">
+            <a href="/download/{{this.filename}}"><p>{{this.name}}</p></a>
+            {{#if ../isAdmin}}
+                <input name="deleteButton" class="deleteButton" type="button" value="Удалить" onclick="deleteMaterials(event)">
+            {{/if}}
+            <hr>
+        </li>
+    {{else}}
+        <h2>Материалов нет</h2>
+    {{/each}}
+</ul>
+{{#if isAdmin}}
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" name="type" value="{{type}}">
+        <input type="file" name="filedata"/><br><br>
+        <lable>Имя: </lable><input type="text" name="name">
+        <input type="submit" value="Добавить">
+    </form>
+{{/if}}
+
+{{#if isAdmin}}
+    <script src="../adminScripts/addFileInDiscipline.js" type="text/javascript"></script>
+{{/if}}
+</body>
+</html>
