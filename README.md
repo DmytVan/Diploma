@@ -1,5 +1,9 @@
 # About diploma
 
+## Description 
+
+A multi-page application that is used for educational purposes. It can be used by teachers to post information about academic disciplines and study materials for them. It includes authentication with a login form, administration pages for changing information on pages. The advantage of the project is that anyone without special programming and web development knowledge can administer this site.
+
 ## Application example
 
 Follow the link to view the application: https://getstartednode-insightful-puku.eu-gb.mybluemix.net/.
